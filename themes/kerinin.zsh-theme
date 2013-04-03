@@ -27,13 +27,21 @@ case ${SOLARIZED_THEME:-dark} in
     *)     bkg=black;;
 esac
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" [%{%B%F{blue}%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{%f%k%b%K{${bkg}}%B%F{green}%}]"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{%F{red}%}*%{%f%k%b%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+
+ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='%{%f%k%b%}
-%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
-%{%K{${bkg}}%}$(_prompt_char)%{%K{${bkg}}%} ${VIMODE}%{%f%k%b%} '
+ZSH_THEME_GIT_PROMPT_UNMERGED="✂ "
+ZSH_THEME_GIT_PROMPT_DELETED="✖ "
+ZSH_THEME_GIT_PROMPT_RENAMED="➜ "
+ZSH_THEME_GIT_PROMPT_MODIFIED="✎ "
+ZSH_THEME_GIT_PROMPT_ADDED="✚ "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="? "
 
-RPROMPT='$(date +"%A %B %d %I:%M:%S %p")  !%{%B%F{cyan}%}%!%{%f%k%b%}'
+PROMPT='%{%f%k%b%}
+%{%K{${bkg}}%B%F{green}%}%n on %{%B%F{blue}%}%{%B%F{cyan}%}%m%{%B%F{green}%} in %{%b%F{green}%K{${bkg}}%}%~%{%B%F{green}%} $(git_prompt_info) $(git_prompt_short_sha) $(git_prompt_status) $(git_prompt_ahead)%E%{%f%k%b%}
+${VIMODE}%{%f%k%b%}  '
+
+RPROMPT='$(date +"%A %B %d %I:%M:%S %p") !%{%B%F{cyan}%}%!%{%f%k%b%}'
