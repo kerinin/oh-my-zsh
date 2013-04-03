@@ -2,11 +2,12 @@
 
 # set VIMODE according to the current mode (default “[i]”)
 VIMODE='¶'
-function zle-keymap-select {
+function zle-line-init zle-keymap-select {
   VIMODE="${${KEYMAP/vicmd/✈}/(main|viins)/¶}"
   zle reset-prompt
 }
 
+zle -N zle-line-init
 zle -N zle-keymap-select
 
 function _prompt_char() {
