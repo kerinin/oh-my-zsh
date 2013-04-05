@@ -43,6 +43,6 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="? "
 
 PROMPT='%{%f%k%b%}
 %{%K{${bkg}}%B%F{green}%}%n on %{%B%F{blue}%}%{%B%F{cyan}%}%m%{%B%F{green}%} in %{%b%F{green}%K{${bkg}}%}%~%{%B%F{green}%} $(git_prompt_info) $(git_prompt_short_sha) $(git_prompt_status) $(git_prompt_ahead)%E%{%f%k%b%}
-!%{%B%F{green}%}%! %F{bkg}${VIMODE}%{%f%k%b%}  '
+%{%B%F{green}%}!%! %F{bkg}${VIMODE}%{%f%k%b%}  '
 
 RPROMPT='$(date +"%A %B %d %I:%M:%S %p") %{%f%k%b%}'
